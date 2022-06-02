@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { lastIndexOf, substr } from "@7urtle/lambda";
+import { BrowserRouter as Router } from "react-router-dom";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { Scrollbars } from "react-custom-scrollbars-2";
+import Routes from "./Routes";
+import Body from "./Layout/Body";
+// Materila ui
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: "#fff",
+    },
+  },
+});
+const getBasename = (path) => substr(lastIndexOf("/")(path))(0)(path);
 
 function App() {
+  // const [scrollPosition, setScrollPosition] = useState(0);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <Scrollbars style={{ width: "100%", height: "100vh" }}>
+        <div className="App">
+          <article>
+            <Router basename={getBasename(window.location.pathname)}>
+              <Body>
+                <Routes />
+              </Body>
+            </Router>
+          </article>
+        </div>
+      </Scrollbars>
+    </ThemeProvider>
   );
 }
 
-export default App;
+export default React.memo(App);
