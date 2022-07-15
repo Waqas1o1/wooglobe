@@ -6,9 +6,8 @@ import NavBar from "../components/NavBar";
 
 export default function Body(props) {
   return (
-    <>
-      <Container maxWidth={false}>
-        {/* <ToastContainer
+    <Container maxWidth={false}>
+      {/* <ToastContainer
         position="bottom-center"
         autoClose={5000}
         hideProgressBar={false}
@@ -20,12 +19,9 @@ export default function Body(props) {
         pauseOnHover
         style={{ width: "auto", minWidth: "50%" }}
       /> */}
-        <NavBar />
-        <main>
-          {props.children}
-          <Footer />
-        </main>
-      </Container>
-    </>
+      <NavBar>{props.children}</NavBar>
+
+      <Footer />
+    </Container>
   );
 }

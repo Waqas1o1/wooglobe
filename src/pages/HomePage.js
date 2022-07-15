@@ -85,12 +85,7 @@ const HomePage = () => {
         <Typography variant="h5" align="left">
           We license video for every purpose
         </Typography>
-        <Typography
-          gutterBottom
-          variant="body1"
-          align="left"
-          component={"div"}
-        >
+        <Typography gutterBottom variant="body1" align="left" component={"div"}>
           Check out our creators’ content, collated for all occassions
         </Typography>
         <Carousel

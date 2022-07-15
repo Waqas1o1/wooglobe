@@ -9,7 +9,7 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 
 export default function Footer() {
   return (
-    <footer>
+    <footer >
       <Paper
         sx={{
           height: "500px",
@@ -88,7 +88,7 @@ export default function Footer() {
             <Grid item>
               <IconButton
                 sx={{
-                  color:"#bc318f",
+                  color: "#bc318f",
                 }}
               >
                 <InstagramIcon />
